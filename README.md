@@ -11,7 +11,7 @@ This app is completely made using Flutter.
 - Update of Each Country in Regional Section.(NEW Update1)
 - Refresh Button to get Real-Time.
 - FAQs, Indian Donation Links and MythBusters.(WHO approved)
-- Search Bar Implementation for ease of fiding.(NEW Update2)
+- Search Bar Implementation for ease of finding.(NEW Update2)
 
 ## TODO:
 - A Dedicated India Feature.
