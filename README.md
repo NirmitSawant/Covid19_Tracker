@@ -13,4 +13,7 @@ This app is completely made using Flutter.
 - FAQs, Indian Donation Links and MythBusters.(WHO approved)
 - Search Bar Implementation for ease of fiding.(NEW Update2)
 
+## TODO:
+- A Dedicated India Feature.
+- COVID-19 Stories (Yet To Think On It)
 
