@@ -1,40 +1,40 @@
 import 'dart:convert';
 
 import 'package:covidtracker/datasource.dart';
-import 'package:covidtracker/pages/countrypage.dart';
+import 'package:covidtracker/india/statespage.dart';
+import 'package:covidtracker/india/topfivestates.dart';
 import 'package:covidtracker/panels/fourpanel.dart';
 import 'package:covidtracker/panels/infopanel.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-import 'panels/topfivepanel.dart';
-
-class HomePage extends StatefulWidget {
+class IndiaHomePage extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _IndiaHomePageState createState() => _IndiaHomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
-  Map worldData;
-  fetchWorldWideData() async {
-    http.Response response = await http.get('https://corona.lmao.ninja/v2/all');
+class _IndiaHomePageState extends State<IndiaHomePage> {
+  Map indiaData;
+  fetchIndiaData() async {
+    http.Response response =
+        await http.get('https://corona.lmao.ninja/v2/countries/india');
     setState(() {
-      worldData = json.decode(response.body);
+      indiaData = json.decode(response.body);
     });
   }
 
-  List countryData;
-  fetchCountryData() async {
+  Map stateData;
+  fetchStateData() async {
     http.Response response =
-        await http.get('https://corona.lmao.ninja/v2/countries?sort=cases');
+        await http.get('https://api.covid19india.org/data.json');
     setState(() {
-      countryData = json.decode(response.body);
+      stateData = json.decode(response.body);
     });
   }
 
   Future fetchData() async {
-    fetchWorldWideData();
-    fetchCountryData();
+    fetchIndiaData();
+    fetchStateData();
   }
 
   @override
@@ -48,7 +48,9 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
-        title: Text('COVID-19 TRACKER'),
+        title: Text(
+          'COVID-19 TRACKER',
+        ),
       ),
       drawer: new Drawer(
         child: new ListView(
@@ -93,12 +95,12 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Container(
-                height: 150,
+                height: 100,
                 alignment: Alignment.center,
                 padding: EdgeInsets.all(10),
                 color: Colors.orange[100],
                 child: Text(
-                  DataSource.quote,
+                  DataSource.quoteindia,
                   style: TextStyle(
                     color: Colors.orange[900],
                     fontWeight: FontWeight.bold,
@@ -112,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Text(
-                      "Worldwide",
+                      "Nationwide",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
@@ -123,7 +125,7 @@ class _HomePageState extends State<HomePage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => CountryPage()));
+                                builder: (context) => StatesPage()));
                       },
                       child: Container(
                         padding: EdgeInsets.all(10),
@@ -132,7 +134,7 @@ class _HomePageState extends State<HomePage> {
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: Text(
-                          "Regional",
+                          "States",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
@@ -143,10 +145,10 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-              worldData == null
+              indiaData == null
                   ? Center(child: CircularProgressIndicator())
                   : FourPanel(
-                      fourData: worldData,
+                      fourData: indiaData,
                     ),
               SizedBox(
                 height: 20.0,
@@ -155,7 +157,7 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.symmetric(
                     horizontal: 10.0, vertical: 10.0),
                 child: Text(
-                  "Most Affected Countries",
+                  "Most Affected States",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
@@ -165,10 +167,10 @@ class _HomePageState extends State<HomePage> {
               SizedBox(
                 height: 10.0,
               ),
-              countryData == null
+              stateData == null
                   ? Center(child: CircularProgressIndicator())
-                  : TopFivePanel(
-                      fiveData: countryData,
+                  : TopFiveStates(
+                      fiveStates: stateData,
                     ),
               SizedBox(
                 height: 20.0,
@@ -181,7 +183,6 @@ class _HomePageState extends State<HomePage> {
                 child: Text(
                   "GO CORONA. CORONA GO!",
                   style: TextStyle(
-                    fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

@@ -41,77 +41,77 @@ class Search extends SearchDelegate {
           return GestureDetector(
             child: Card(
               child: Container(
-                width: 200,
-                height: 130,
-                margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
-                decoration: BoxDecoration(color: Colors.white),
-                child: Row(
-                  children: <Widget>[
-                    Container(
-                      margin: EdgeInsets.symmetric(horizontal: 10.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Text(
-                            suggestionList[index]['country'],
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18,
-                            ),
-                          ),
-                          Image.network(
-                            suggestionList[index]['countryInfo']['flag'],
-                            height: 70.0,
-                            width: 50.0,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Text(
-                              "CONFIRMED: " +
-                                  suggestionList[index]['cases'].toString(),
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.red,
-                                  fontSize: 18),
-                            ),
-                            Text(
-                              'ACTIVE: ' +
-                                  suggestionList[index]['active'].toString(),
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.blue,
-                                  fontSize: 18),
-                            ),
-                            Text(
-                              'RECOVERED: ' +
-                                  suggestionList[index]['recovered'].toString(),
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.green,
-                                  fontSize: 18),
-                            ),
-                            Text(
-                              'DEATHS: ' +
-                                  suggestionList[index]['deaths'].toString(),
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.grey[900],
-                                  fontSize: 18),
-                            ),
-                          ],
+                  width: 200,
+                  height: 130,
+                  margin:
+                      EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+                  decoration: BoxDecoration(color: Colors.white),
+                  child: Column(
+                    children: <Widget>[
+                      Text(
+                        suggestionList[index]['country'],
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
                         ),
                       ),
-                    )
-                  ],
-                ),
-              ),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: <Widget>[
+                          Container(
+                            margin: EdgeInsets.symmetric(horizontal: 10.0),
+                            child: Image.network(
+                              suggestionList[index]['countryInfo']['flag'],
+                              height: 50.0,
+                              width: 60.0,
+                            ),
+                          ),
+                          Container(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Text(
+                                  "CONFIRMED: " +
+                                      suggestionList[index]['cases'].toString(),
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.red),
+                                ),
+                                Text(
+                                  'ACTIVE: ' +
+                                      suggestionList[index]['active']
+                                          .toString(),
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.blue),
+                                ),
+                                Text(
+                                  'RECOVERED: ' +
+                                      suggestionList[index]['recovered']
+                                          .toString(),
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.green),
+                                ),
+                                Text(
+                                  'DEATHS: ' +
+                                      suggestionList[index]['deaths']
+                                          .toString(),
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.grey[900]),
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    ],
+                  )),
             ),
           );
         });
@@ -130,77 +130,74 @@ class Search extends SearchDelegate {
         itemBuilder: (context, index) {
           return Card(
             child: Container(
-              width: 200,
-              height: 130,
-              margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
-              decoration: BoxDecoration(color: Colors.white),
-              child: Row(
-                children: <Widget>[
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 10.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          suggestionList[index]['country'],
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                          ),
-                        ),
-                        Image.network(
-                          suggestionList[index]['countryInfo']['flag'],
-                          height: 70.0,
-                          width: 50.0,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Text(
-                            "CONFIRMED: " +
-                                suggestionList[index]['cases'].toString(),
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.red,
-                                fontSize: 18),
-                          ),
-                          Text(
-                            'ACTIVE: ' +
-                                suggestionList[index]['active'].toString(),
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.blue,
-                                fontSize: 18),
-                          ),
-                          Text(
-                            'RECOVERED: ' +
-                                suggestionList[index]['recovered'].toString(),
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.green,
-                                fontSize: 18),
-                          ),
-                          Text(
-                            'DEATHS: ' +
-                                suggestionList[index]['deaths'].toString(),
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.grey[900],
-                                fontSize: 18),
-                          ),
-                        ],
+                width: 200,
+                height: 130,
+                margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+                decoration: BoxDecoration(color: Colors.white),
+                child: Column(
+                  children: <Widget>[
+                    Text(
+                      suggestionList[index]['country'],
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
                       ),
                     ),
-                  )
-                ],
-              ),
-            ),
+                    SizedBox(
+                      height: 10.0,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.symmetric(horizontal: 10.0),
+                          child: Image.network(
+                            suggestionList[index]['countryInfo']['flag'],
+                            height: 50.0,
+                            width: 60.0,
+                          ),
+                        ),
+                        Container(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Text(
+                                "CONFIRMED: " +
+                                    suggestionList[index]['cases'].toString(),
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.red),
+                              ),
+                              Text(
+                                'ACTIVE: ' +
+                                    suggestionList[index]['active'].toString(),
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.blue),
+                              ),
+                              Text(
+                                'RECOVERED: ' +
+                                    suggestionList[index]['recovered']
+                                        .toString(),
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.green),
+                              ),
+                              Text(
+                                'DEATHS: ' +
+                                    suggestionList[index]['deaths'].toString(),
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.grey[900]),
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  ],
+                )),
           );
         });
   }

@@ -6,6 +6,9 @@ class DataSource {
   static String quote =
       "Let us remind ourselves that our ancestors saw nature as mother, and asked us to respect it. At some point in history, we forgot ancient wisdom. Now it is time to pause and wonder where we lost the way, and how we can still make a comeback. ";
 
+  static String quoteindia =
+      "There’s no going back to the \‘normal\’ – all we should focus on is building for the \‘new normal.\’";
+
   static List questionAnswers = [
     {
       "question": "What is COVID-19?",
