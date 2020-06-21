@@ -23,4 +23,4 @@ This app is completely made using Flutter.
 ## TODO:
 - A Dedicated India Feature.
 - COVID-19 Stories (Yet To Think On It)
-
+- Better UI 
