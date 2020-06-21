@@ -53,8 +53,8 @@ class _HomePageState extends State<HomePage> {
       drawer: new Drawer(
         child: new ListView(
           children: <Widget>[
-            new UserAccountsDrawerHeader(
-              accountName: new Text("COVID-19 Tracker"),
+            new DrawerHeader(
+              child: Text("COVID-19 Tracker"),
             ),
             GestureDetector(
               onTap: () {
