@@ -39,74 +39,92 @@ class _StatesPageState extends State<StatesPage> {
               )
             : ListView.builder(
                 itemBuilder: (context, index) {
-                  return Card(
-                    child: Container(
-                      width: 200,
-                      height: 130,
-                      margin: EdgeInsets.symmetric(
-                          horizontal: 10.0, vertical: 10.0),
-                      decoration: BoxDecoration(color: Colors.white),
-                      child: Column(
-                        children: <Widget>[
-                          Text(
-                            stateData['statewise'][index + 1]['state']
-                                .toString(),
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18,
+                  return GestureDetector(
+                    child: Card(
+                      child: Container(
+                        width: 200,
+                        height: 130,
+                        margin: EdgeInsets.symmetric(
+                            horizontal: 10.0, vertical: 10.0),
+                        decoration: BoxDecoration(color: Colors.white),
+                        child: Column(
+                          children: <Widget>[
+                            Text(
+                              stateData['statewise'][index + 1]['state']
+                                  .toString(),
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                              ),
                             ),
-                          ),
-                          SizedBox(
-                            height: 5.0,
-                          ),
-                          Container(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Text(
-                                  "CONFIRMED: " +
-                                      stateData['statewise'][index + 1]
-                                              ['confirmed']
-                                          .toString(),
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.red,
-                                  ),
-                                ),
-                                Text(
-                                  'ACTIVE: ' +
-                                      stateData['statewise'][index + 1]
-                                              ['active']
-                                          .toString(),
-                                  style: TextStyle(
+                            SizedBox(
+                              height: 5.0,
+                            ),
+                            Container(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Text(
+                                    "CONFIRMED: " +
+                                        stateData['statewise'][index + 1]
+                                                ['confirmed']
+                                            .toString()
+                                            .replaceAllMapped(
+                                                new RegExp(
+                                                    r'(\d{1,3})(?=(\d{3})+(?!\d))'),
+                                                (Match m) => '${m[1]},'),
+                                    style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.blue),
-                                ),
-                                Text(
-                                  'RECOVERED: ' +
-                                      stateData['statewise'][index + 1]
-                                              ['recovered']
-                                          .toString(),
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.green,
+                                      color: Colors.red,
+                                    ),
                                   ),
-                                ),
-                                Text(
-                                  'DEATHS: ' +
-                                      stateData['statewise'][index + 1]
-                                              ['deaths']
-                                          .toString(),
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.grey[900],
+                                  Text(
+                                    'ACTIVE: ' +
+                                        stateData['statewise'][index + 1]
+                                                ['active']
+                                            .toString()
+                                            .replaceAllMapped(
+                                                new RegExp(
+                                                    r'(\d{1,3})(?=(\d{3})+(?!\d))'),
+                                                (Match m) => '${m[1]},'),
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.blue),
                                   ),
-                                ),
-                              ],
-                            ),
-                          )
-                        ],
+                                  Text(
+                                    'RECOVERED: ' +
+                                        stateData['statewise'][index + 1]
+                                                ['recovered']
+                                            .toString()
+                                            .replaceAllMapped(
+                                                new RegExp(
+                                                    r'(\d{1,3})(?=(\d{3})+(?!\d))'),
+                                                (Match m) => '${m[1]},'),
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.green,
+                                    ),
+                                  ),
+                                  Text(
+                                    'DEATHS: ' +
+                                        stateData['statewise'][index + 1]
+                                                ['deaths']
+                                            .toString()
+                                            .replaceAllMapped(
+                                                new RegExp(
+                                                    r'(\d{1,3})(?=(\d{3})+(?!\d))'),
+                                                (Match m) => '${m[1]},'),
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.grey[900],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   );

@@ -87,7 +87,11 @@ class _CountryPageState extends State<CountryPage> {
                                       Text(
                                         "CONFIRMED: " +
                                             countryData[index]['cases']
-                                                .toString(),
+                                                .toString()
+                                                .replaceAllMapped(
+                                                    new RegExp(
+                                                        r'(\d{1,3})(?=(\d{3})+(?!\d))'),
+                                                    (Match m) => '${m[1]},'),
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold,
                                             color: Colors.red),
@@ -95,7 +99,11 @@ class _CountryPageState extends State<CountryPage> {
                                       Text(
                                         'ACTIVE: ' +
                                             countryData[index]['active']
-                                                .toString(),
+                                                .toString()
+                                                .replaceAllMapped(
+                                                new RegExp(
+                                                    r'(\d{1,3})(?=(\d{3})+(?!\d))'),
+                                                    (Match m) => '${m[1]},'),
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold,
                                             color: Colors.blue),
@@ -103,7 +111,11 @@ class _CountryPageState extends State<CountryPage> {
                                       Text(
                                         'RECOVERED: ' +
                                             countryData[index]['recovered']
-                                                .toString(),
+                                                .toString()
+                                                .replaceAllMapped(
+                                                new RegExp(
+                                                    r'(\d{1,3})(?=(\d{3})+(?!\d))'),
+                                                    (Match m) => '${m[1]},'),
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold,
                                             color: Colors.green),
@@ -111,7 +123,11 @@ class _CountryPageState extends State<CountryPage> {
                                       Text(
                                         'DEATHS: ' +
                                             countryData[index]['deaths']
-                                                .toString(),
+                                                .toString()
+                                                .replaceAllMapped(
+                                                new RegExp(
+                                                    r'(\d{1,3})(?=(\d{3})+(?!\d))'),
+                                                    (Match m) => '${m[1]},'),
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold,
                                             color: Colors.grey[900]),

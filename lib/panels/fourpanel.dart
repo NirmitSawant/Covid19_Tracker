@@ -4,8 +4,14 @@ class FourPanel extends StatelessWidget {
   final Map fourData;
 
   const FourPanel({Key key, this.fourData}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
+    var cases = fourData['cases'].toString();
+    var active = fourData['active'].toString();
+    var recovered = fourData['recovered'].toString();
+    var deaths = fourData['deaths'].toString();
+
     return Container(
       child: GridView(
         shrinkWrap: true,
@@ -17,25 +23,33 @@ class FourPanel extends StatelessWidget {
             title: 'CONFIRMED',
             panelColor: Colors.red[100],
             textColor: Colors.red,
-            count: fourData['cases'].toString(),
+            count: cases.replaceAllMapped(
+                new RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'),
+                (Match m) => '${m[1]},'),
           ),
           StatusPanel(
             title: 'ACTIVE',
             panelColor: Colors.blue[100],
             textColor: Colors.blue[900],
-            count: fourData['active'].toString(),
+            count: active.replaceAllMapped(
+                new RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'),
+                    (Match m) => '${m[1]},'),
           ),
           StatusPanel(
             title: 'RECOVERED',
             panelColor: Colors.green[100],
             textColor: Colors.green[900],
-            count: fourData['recovered'].toString(),
+            count: recovered.replaceAllMapped(
+                new RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'),
+                    (Match m) => '${m[1]},'),
           ),
           StatusPanel(
             title: 'DEATHS',
             panelColor: Colors.grey,
             textColor: Colors.grey[900],
-            count: fourData['deaths'].toString(),
+            count: deaths.replaceAllMapped(
+                new RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'),
+                    (Match m) => '${m[1]},'),
           ),
         ],
       ),

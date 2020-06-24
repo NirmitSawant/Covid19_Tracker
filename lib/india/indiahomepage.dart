@@ -3,10 +3,12 @@ import 'dart:convert';
 import 'package:covidtracker/datasource.dart';
 import 'package:covidtracker/india/statespage.dart';
 import 'package:covidtracker/india/topfivestates.dart';
+import 'package:covidtracker/pages/faqs.dart';
 import 'package:covidtracker/panels/fourpanel.dart';
-import 'package:covidtracker/panels/infopanel.dart';
+import 'package:covidtracker/panels/mythbusters.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:url_launcher/url_launcher.dart';
 
 class IndiaHomePage extends StatefulWidget {
   @override
@@ -53,34 +55,95 @@ class _IndiaHomePageState extends State<IndiaHomePage> {
         ),
       ),
       drawer: new Drawer(
-        child: new ListView(
+        child: new Column(
           children: <Widget>[
-            new UserAccountsDrawerHeader(
-              accountName: new Text("COVID-19 Tracker"),
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.pushReplacementNamed(context, "/world");
-              },
-              child: ListTile(
-                title: new Text(
-                  'World',
+            new DrawerHeader(
+              child: Center(
+                child: Text(
+                  "COVID-19 Tracker",
                   style: TextStyle(
+                    color: Colors.white,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
+              decoration: BoxDecoration(
+                color: primaryBlack,
+                image: DecorationImage(
+                  image: AssetImage("images/covid.jpg"),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            ListTile(
+              onTap: () {
+                Navigator.pushReplacementNamed(context, "/world");
+              },
+              selected: true,
+              title: new Text(
+                'World',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
             new Divider(),
-            GestureDetector(
+            ListTile(
+              selected: true,
               onTap: () {
                 Navigator.pushReplacementNamed(context, "/india");
               },
-              child: ListTile(
-                title: new Text(
-                  'India',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
+              title: new Text(
+                'India',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            new Divider(),
+            ListTile(
+              selected: true,
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => FAQPage()));
+              },
+              title: new Text(
+                'FAQs',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            new Divider(),
+            ListTile(
+              selected: true,
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => MythBusters()));
+              },
+              title: new Text(
+                'MythBusters',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Divider(),
+            Expanded(
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  color: primaryBlack,
+                  child: ListTile(
+                    onTap: () {},
+                    selected: true,
+                    title: Text(
+                      "Creator",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -94,16 +157,22 @@ class _IndiaHomePageState extends State<IndiaHomePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Container(
-                height: 100,
-                alignment: Alignment.center,
-                padding: EdgeInsets.all(10),
-                color: Colors.orange[100],
-                child: Text(
-                  DataSource.quoteindia,
-                  style: TextStyle(
-                    color: Colors.orange[900],
-                    fontWeight: FontWeight.bold,
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Container(
+                  height: 50,
+                  alignment: Alignment.center,
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.orange[100],
+                  ),
+                  child: Text(
+                    DataSource.quote,
+                    style: TextStyle(
+                      color: Colors.orange[900],
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
@@ -175,7 +244,33 @@ class _IndiaHomePageState extends State<IndiaHomePage> {
               SizedBox(
                 height: 20.0,
               ),
-              InfoPanel(),
+              GestureDetector(
+                onTap: () {
+                  launch('https://www.pmcares.gov.in/en/');
+                },
+                child: Container(
+                  padding: EdgeInsets.symmetric(vertical: 12, horizontal: 10),
+                  margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                  color: primaryBlack,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        "DONATE",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                      ),
+                      Icon(
+                        Icons.arrow_forward,
+                        color: Colors.white,
+                      )
+                    ],
+                  ),
+                ),
+              ),
               SizedBox(
                 height: 20.0,
               ),

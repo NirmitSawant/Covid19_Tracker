@@ -34,7 +34,10 @@ class TopFivePanel extends StatelessWidget {
                   width: 10.0,
                 ),
                 Text(
-                  'Confirmed Cases: ' + fiveData[index]['cases'].toString(),
+                  'Confirmed Cases: ' +
+                      fiveData[index]['cases'].toString().replaceAllMapped(
+                          new RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'),
+                          (Match m) => '${m[1]},'),
                   style: TextStyle(
                     color: Colors.red,
                     fontWeight: FontWeight.bold,
