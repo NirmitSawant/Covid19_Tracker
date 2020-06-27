@@ -15,13 +15,18 @@ This app is completely made using Flutter.
 - Search Bar Implementation for ease of finding.(NEW Update2)
 
 ## Screenshots:
-<img width="207" alt="git1" src="https://user-images.githubusercontent.com/45462725/85205325-660eae00-b338-11ea-9ada-a394acb29efa.PNG">
-<img width="215" alt="git3" src="https://user-images.githubusercontent.com/45462725/85205328-673fdb00-b338-11ea-80ff-1794eea41f8c.PNG">
-<img width="216" alt="git4" src="https://user-images.githubusercontent.com/45462725/85226787-f1e70f80-b3f6-11ea-9e48-cd4f4fc6d3c9.PNG">
-<img width="204" alt="git5" src="https://user-images.githubusercontent.com/45462725/85226785-f14e7900-b3f6-11ea-84e8-75a358edd06e.PNG">
-<img width="212" alt="git6" src="https://user-images.githubusercontent.com/45462725/85226781-f01d4c00-b3f6-11ea-8dd1-329f195251ae.PNG">
+   ## HomePage
+<img width="251" alt="1" src="https://user-images.githubusercontent.com/45462725/85569512-38837680-b650-11ea-9a35-976f7d58869b.PNG">  <img width="203" alt="2" src="https://user-images.githubusercontent.com/45462725/85569508-37eae000-b650-11ea-8548-1faa1a3c80b2.PNG">
+   
+   ## Search Bar
+
+<img width="202" alt="3" src="https://user-images.githubusercontent.com/45462725/85569504-37eae000-b650-11ea-9c17-a31d6fa0b9a2.PNG">        <img width="197" alt="4" src="https://user-images.githubusercontent.com/45462725/85569497-36b9b300-b650-11ea-83ec-7f139efbdd92.PNG">
+
+   ## Other
+
+<img width="202" alt="5" src="https://user-images.githubusercontent.com/45462725/85569514-391c0d00-b650-11ea-91f1-3ddcafd9a4e7.PNG">
 
 
 ## TODO:
 - COVID-19 Stories (Yet To Think On It)
-- Better UI 
+- Better UI (Kinda Updating This Daily)
