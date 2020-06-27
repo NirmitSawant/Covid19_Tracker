@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:covidtracker/creator.dart';
 import 'package:covidtracker/datasource.dart';
 import 'package:covidtracker/india/statespage.dart';
 import 'package:covidtracker/india/topfivestates.dart';
@@ -135,7 +136,10 @@ class _IndiaHomePageState extends State<IndiaHomePage> {
                 child: Container(
                   color: primaryBlack,
                   child: ListTile(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Creator()));
+                    },
                     selected: true,
                     title: Text(
                       "Creator",
@@ -256,7 +260,7 @@ class _IndiaHomePageState extends State<IndiaHomePage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Text(
-                        "DONATE",
+                        "DONATE TO PM CARES",
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,

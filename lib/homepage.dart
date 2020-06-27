@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:covidtracker/creator.dart';
 import 'package:covidtracker/datasource.dart';
 import 'package:covidtracker/pages/countrypage.dart';
 import 'package:covidtracker/pages/faqs.dart';
@@ -134,7 +135,10 @@ class _HomePageState extends State<HomePage> {
                 child: Container(
                   color: primaryBlack,
                   child: ListTile(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Creator()));
+                    },
                     selected: true,
                     title: Text(
                       "Creator",

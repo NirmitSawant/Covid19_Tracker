@@ -41,7 +41,7 @@ class FourPanel extends StatelessWidget {
             textColor: Colors.green[900],
             count: recovered.replaceAllMapped(
                 new RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'),
-                    (Match m) => '${m[1]},'),
+                (Match m) => '${m[1]},'),
           ),
           StatusPanel(
             title: 'DEATHS',
