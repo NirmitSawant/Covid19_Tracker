@@ -71,7 +71,7 @@ class _IndiaHomePageState extends State<IndiaHomePage> {
               decoration: BoxDecoration(
                 color: primaryBlack,
                 image: DecorationImage(
-                  image: AssetImage("images/covid.jpg"),
+                  image: AssetImage("images/covid.png"),
                   fit: BoxFit.cover,
                 ),
               ),

@@ -125,8 +125,8 @@ class _CountryPageState extends State<CountryPage> {
                                             countryData[index]['deaths']
                                                 .toString()
                                                 .replaceAllMapped(
-                                                new RegExp(
-                                                    r'(\d{1,3})(?=(\d{3})+(?!\d))'),
+                                                    new RegExp(
+                                                        r'(\d{1,3})(?=(\d{3})+(?!\d))'),
                                                     (Match m) => '${m[1]},'),
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold,

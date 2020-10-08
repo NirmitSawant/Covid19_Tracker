@@ -4,6 +4,7 @@ import 'package:covidtracker/creator.dart';
 import 'package:covidtracker/datasource.dart';
 import 'package:covidtracker/pages/countrypage.dart';
 import 'package:covidtracker/pages/faqs.dart';
+import 'package:covidtracker/pages/preventions.dart';
 import 'package:covidtracker/panels/fourpanel.dart';
 import 'package:covidtracker/panels/mythbusters.dart';
 import 'package:flutter/cupertino.dart';
@@ -70,7 +71,7 @@ class _HomePageState extends State<HomePage> {
               decoration: BoxDecoration(
                 color: primaryBlack,
                 image: DecorationImage(
-                  image: AssetImage("images/covid.jpg"),
+                  image: AssetImage("images/covid.png"),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -80,6 +81,7 @@ class _HomePageState extends State<HomePage> {
                 Navigator.pushReplacementNamed(context, "/world");
               },
               selected: true,
+              leading: Icon(Icons.blur_circular_rounded),
               title: new Text(
                 'World',
                 style: TextStyle(
@@ -90,6 +92,7 @@ class _HomePageState extends State<HomePage> {
             new Divider(),
             ListTile(
               selected: true,
+              leading: Icon(Icons.flag_rounded),
               onTap: () {
                 Navigator.pushReplacementNamed(context, "/india");
               },
@@ -103,6 +106,7 @@ class _HomePageState extends State<HomePage> {
             new Divider(),
             ListTile(
               selected: true,
+              leading: Icon(Icons.question_answer),
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => FAQPage()));
@@ -117,6 +121,7 @@ class _HomePageState extends State<HomePage> {
             new Divider(),
             ListTile(
               selected: true,
+              leading: Icon(Icons.all_inclusive_rounded),
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => MythBusters()));
@@ -129,6 +134,20 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Divider(),
+            ListTile(
+              selected: true,
+              leading: Icon(Icons.add_moderator),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Preventions()));
+              },
+              title: new Text(
+                'Preventions',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
             Expanded(
               child: Align(
                 alignment: Alignment.bottomCenter,
@@ -140,6 +159,10 @@ class _HomePageState extends State<HomePage> {
                           MaterialPageRoute(builder: (context) => Creator()));
                     },
                     selected: true,
+                    leading: Icon(
+                      Icons.supervised_user_circle_rounded,
+                      color: Colors.white,
+                    ),
                     title: Text(
                       "Creator",
                       style: TextStyle(
