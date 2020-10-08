@@ -7,7 +7,7 @@ This app is completely made using Flutter.
 -Android
 
 ## Features:
-- (21/6) A Dedicated India Page Added.
+- (21/6/2020) A Dedicated India Page Added.
 - Daily Update of Cases in the World.
 - Update of Each Country in Regional Section.(NEW Update1)
 - Refresh Button to get Real-Time.
@@ -30,4 +30,7 @@ This app is completely made using Flutter.
 
 ## TODO:
 - COVID-19 Stories (Yet To Think On It)
-- Better UI (Kinda Updating This Daily)
+- Better UI (~~Kinda Updating This Daily~~)
+
+## Contribution
+- If anybody wants to work on this just PR with your idea or enhancement or change , I would check and merge it. 
