@@ -1,4 +1,5 @@
 import 'dart:convert';
+
 import 'package:covidtracker/creator.dart';
 import 'package:covidtracker/datasource.dart';
 import 'package:covidtracker/pages/countrypage.dart';
@@ -11,7 +12,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:url_launcher/url_launcher.dart';
-// import 'package:charts_flutter/flutter.dart' as charts;
+
 import 'panels/topfivepanel.dart';
 
 class HomePage extends StatefulWidget {
