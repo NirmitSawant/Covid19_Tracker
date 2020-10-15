@@ -5,6 +5,7 @@ import 'package:covidtracker/datasource.dart';
 import 'package:covidtracker/india/statespage.dart';
 import 'package:covidtracker/india/topfivestates.dart';
 import 'package:covidtracker/pages/faqs.dart';
+import 'package:covidtracker/pages/preventions.dart';
 import 'package:covidtracker/panels/fourpanel.dart';
 import 'package:covidtracker/panels/mythbusters.dart';
 import 'package:flutter/material.dart';
@@ -81,6 +82,7 @@ class _IndiaHomePageState extends State<IndiaHomePage> {
                 Navigator.pushReplacementNamed(context, "/world");
               },
               selected: true,
+              leading: Icon(Icons.blur_circular_rounded),
               title: new Text(
                 'World',
                 style: TextStyle(
@@ -91,6 +93,7 @@ class _IndiaHomePageState extends State<IndiaHomePage> {
             new Divider(),
             ListTile(
               selected: true,
+              leading: Icon(Icons.flag_rounded),
               onTap: () {
                 Navigator.pushReplacementNamed(context, "/india");
               },
@@ -104,6 +107,7 @@ class _IndiaHomePageState extends State<IndiaHomePage> {
             new Divider(),
             ListTile(
               selected: true,
+              leading: Icon(Icons.question_answer),
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => FAQPage()));
@@ -118,6 +122,7 @@ class _IndiaHomePageState extends State<IndiaHomePage> {
             new Divider(),
             ListTile(
               selected: true,
+              leading: Icon(Icons.all_inclusive_rounded),
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => MythBusters()));
@@ -130,6 +135,20 @@ class _IndiaHomePageState extends State<IndiaHomePage> {
               ),
             ),
             Divider(),
+            ListTile(
+              selected: true,
+              leading: Icon(Icons.add_moderator),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Preventions()));
+              },
+              title: new Text(
+                'Preventions',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
             Expanded(
               child: Align(
                 alignment: Alignment.bottomCenter,
@@ -141,6 +160,10 @@ class _IndiaHomePageState extends State<IndiaHomePage> {
                           MaterialPageRoute(builder: (context) => Creator()));
                     },
                     selected: true,
+                    leading: Icon(
+                      Icons.supervised_user_circle_rounded,
+                      color: Colors.white,
+                    ),
                     title: Text(
                       "Creator",
                       style: TextStyle(
