@@ -17,6 +17,7 @@ dependencies:
   http: ^0.12.1
   flutter_swiper: ^1.1.6
   video_player: ^0.10.11+1
+  multi_charts: ^0.2.0
 
 
 dev_dependencies:

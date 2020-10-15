@@ -4,6 +4,7 @@ import 'package:covidtracker/creator.dart';
 import 'package:covidtracker/datasource.dart';
 import 'package:covidtracker/pages/countrypage.dart';
 import 'package:covidtracker/pages/faqs.dart';
+import 'package:covidtracker/panels/pie_chart.dart';
 import 'package:covidtracker/pages/preventions.dart';
 import 'package:covidtracker/panels/fourpanel.dart';
 import 'package:covidtracker/panels/mythbusters.dart';
@@ -247,6 +248,27 @@ class _HomePageState extends State<HomePage> {
                     ),
               SizedBox(
                 height: 20.0,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 10, top: 20, bottom: 20),
+                child: Text(
+                  "WorldWide Graph",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              worldData == null
+                  ? Center(child: CircularProgressIndicator())
+                  : Piechart(
+                      pieData: worldData,
+                    ),
+              SizedBox(
+                height: 50.0,
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(
