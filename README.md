@@ -26,7 +26,7 @@ This app is completely made using Flutter.
 
    ## Other
 
-<img width="202" alt="5" src="https://user-images.githubusercontent.com/45462725/85569514-391c0d00-b650-11ea-91f1-3ddcafd9a4e7.PNG">      <img width="197" alt="7" src="https://user-images.githubusercontent.com/45462725/85920500-f2b5f080-b891-11ea-9778-8669026e9ff3.PNG">        ![2](https://user-images.githubusercontent.com/45462725/95443308-0afdd700-097a-11eb-8c80-309859f8dc08.png) 
+<img width="202" alt="5" src="https://user-images.githubusercontent.com/45462725/85569514-391c0d00-b650-11ea-91f1-3ddcafd9a4e7.PNG">      ![2](https://user-images.githubusercontent.com/45462725/95443308-0afdd700-097a-11eb-8c80-309859f8dc08.png)    <img width="197" alt="7" src="https://user-images.githubusercontent.com/45462725/85920500-f2b5f080-b891-11ea-9778-8669026e9ff3.PNG">        
 
 
 ## TODO:
