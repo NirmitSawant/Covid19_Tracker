@@ -14,6 +14,7 @@ This app is completely made using Flutter.
 - FAQs, Indian Donation Links and MythBusters.(WHO approved)
 - (8/10/2020) Preventions with GIFs. (*_Big Up to @yashraut362 for adding this._*)
 - Search Bar Implementation for ease of finding.(NEW Update2)
+- (28/12/2020) New Creator Images and Cleansing of code.
 
 ## Screenshots:
    ## HomePage
@@ -30,8 +31,8 @@ This app is completely made using Flutter.
 
 
 ## TODO:
-- COVID-19 Stories (Yet To Think On It)
-- Better UI (~~Kinda Updating This Daily~~)
+- ~~COVID-19 Stories (Yet To Think On It)~~
+- Stopped working on this now ~~Better UI~~ (~~Kinda Updating This Daily~~)
 
 ## Contribution
 - If anybody wants to work on this just PR with your idea or enhancement or change, I would check and merge it. 
