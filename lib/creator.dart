@@ -106,7 +106,7 @@ class _CreatorState extends State<Creator> {
                             color: Colors.blueGrey[900],
                           ),
                           title: Text(
-                            '+91 9870941743',
+                            '+91 9870******',
                             style: TextStyle(
                               color: Colors.blueGrey[900],
                               fontFamily: 'Source Sans Pro',
